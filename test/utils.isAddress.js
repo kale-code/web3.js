@@ -3,7 +3,7 @@ var utils = require('../lib/utils/utils.js');
 var assert = chai.assert;
 
 var tests = [
-    { value: function () {}, is: false},
+    { value: () => {}, is: false},
     { value: new Function(), is: false},
     { value: 'function', is: false},
     { value: {}, is: false},
@@ -16,10 +16,10 @@ var tests = [
     { value: '0xE247A45C287191D435A8A5D72A7C8DC030451E9F', is: true }
 ];
 
-describe('lib/utils/utils', function () {
-    describe('isAddress', function () {
-        tests.forEach(function (test) {
-            it('shoud test if value ' + test.value + ' is address: ' + test.is, function () {
+describe('lib/utils/utils', () => {
+    describe('isAddress', () => {
+        tests.forEach(test => {
+            it('shoud test if value ' + test.value + ' is address: ' + test.is, () => {
                 assert.equal(utils.isAddress(test.value), test.is);
             });
         });
