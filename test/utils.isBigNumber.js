@@ -4,7 +4,7 @@ var BigNumber = require('bignumber.js');
 var assert = chai.assert;
 
 var tests = [
-    { value: function () {}, is: false},
+    { value: () => {}, is: false},
     { value: new Function(), is: false},
     { value: 'function', is: false},
     { value: {}, is: false},
@@ -15,10 +15,10 @@ var tests = [
 
 ];
 
-describe('lib/utils/utils', function () {
-    describe('isBigNumber', function () {
-        tests.forEach(function (test) {
-            it('shoud test if value ' + test.func + ' is BigNumber: ' + test.is, function () {
+describe('lib/utils/utils', () => {
+    describe('isBigNumber', () => {
+        tests.forEach(test => {
+            it('shoud test if value ' + test.func + ' is BigNumber: ' + test.is, () => {
                 assert.equal(utils.isBigNumber(test.value), test.is);
             });
         });   
