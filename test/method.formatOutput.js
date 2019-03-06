@@ -2,16 +2,12 @@ var chai = require('chai');
 var assert = chai.assert;
 var Method = require('../lib/web3/method');
 
-describe('lib/web3/method', function () {
-    describe('formatOutput', function () {
-        it('should format plain output', function () {
+describe('lib/web3/method', () => {
+    describe('formatOutput', () => {
+        it('should format plain output', () => {
             
             // given
-            var formatter = function (args) {
-                return args.map(function (arg) {
-                    return arg + '*';
-                });
-            };
+            var formatter = args => args.map(arg => arg + '*');
             
             var method = new Method({
                 outputFormatter: formatter
@@ -26,7 +22,7 @@ describe('lib/web3/method', function () {
             assert.deepEqual(result, expectedArgs);
         });
         
-        it('should do nothing if there is no formatter', function () {
+        it('should do nothing if there is no formatter', () => {
 
             // given
             var method = new Method({});
