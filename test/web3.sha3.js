@@ -6,8 +6,8 @@ var web3 = new Web3();
 
 var method = 'sha3';
 
-describe('web3.sha3', function () {
-    it('should return sha3 with hex prefix', function() {
+describe('web3.sha3', () => {
+    it('should return sha3 with hex prefix', () => {
 	test1 = web3.sha3('test123');
 	test2 = web3.sha3('test(int)');
 	test3 = web3.sha3('0x80', {encoding: 'hex'});
