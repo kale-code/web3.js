@@ -4,8 +4,8 @@ var Web3 = require('../index');
 var web3 = new Web3();
 var FakeHttpProvider2 = require('./helpers/FakeHttpProvider2');
 
-describe('web3.eth.sendIBANTransaction', function () {
-    it('should send transaction', function () {
+describe('web3.eth.sendIBANTransaction', () => {
+    it('should send transaction', () => {
 
         var iban = 'XE81ETHXREGGAVOFYORK';
         var address =   '0x1234567890123456789012345678901234500000';
@@ -22,7 +22,7 @@ describe('web3.eth.sendIBANTransaction', function () {
         }]);
 
         var step = 0;
-        provider.injectValidation(function (payload) {
+        provider.injectValidation(payload => {
             if (step === 0) {
                 step++;
                 assert.equal(payload.method, 'eth_call');
