@@ -14,7 +14,7 @@ Npm.depends({
 });
 
 
-Package.onUse(function(api) {
+Package.onUse(api => {
   api.versionsFrom('1.0.3.2');
 
   // api.use('3stack:bignumber@2.0.0', 'client');
