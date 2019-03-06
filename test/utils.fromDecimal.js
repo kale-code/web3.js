@@ -31,10 +31,10 @@ var tests = [
     { value: '-0x0', expected: '0x0'}
 ];
 
-describe('lib/utils/utils', function () {
-    describe('fromDecimal', function () {
-        tests.forEach(function (test) {
-            it('should turn ' + test.value + ' to ' + test.expected, function () {
+describe('lib/utils/utils', () => {
+    describe('fromDecimal', () => {
+        tests.forEach(test => {
+            it('should turn ' + test.value + ' to ' + test.expected, () => {
                 assert.equal(utils.fromDecimal(test.value), test.expected);
             });
         });
