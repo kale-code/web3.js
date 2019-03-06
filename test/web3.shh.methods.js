@@ -4,8 +4,8 @@ var Web3 = require('../index.js');
 var web3 = new Web3();
 var u = require('./helpers/test.utils.js');
 
-describe('web3.shh', function() {
-    describe('methods', function() {
+describe('web3.shh', () => {
+    describe('methods', () => {
         u.methodExists(web3.shh, 'version');
         u.methodExists(web3.shh, 'info');
         u.methodExists(web3.shh, 'setMaxMessageSize');
