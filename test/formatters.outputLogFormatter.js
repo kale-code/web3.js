@@ -1,9 +1,9 @@
 var assert = require('assert');
 var formatters = require('../lib/web3/formatters.js');
 
-describe('formatters', function () {
-    describe('outputLogFormatter', function () {
-        it('should return the correct value', function () {
+describe('formatters', () => {
+    describe('outputLogFormatter', () => {
+        it('should return the correct value', () => {
             
             assert.deepEqual(formatters.outputLogFormatter({
                 transactionIndex: '0x3e8',
@@ -23,7 +23,7 @@ describe('formatters', function () {
                 topics: ['0x68656c6c6f','0x6d79746f70696373']
             });
         });
-        it('should return the correct value, when null values are present', function () {
+        it('should return the correct value, when null values are present', () => {
             
             assert.deepEqual(formatters.outputLogFormatter({
                 transactionIndex: null,
