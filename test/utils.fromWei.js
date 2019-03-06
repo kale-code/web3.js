@@ -1,9 +1,9 @@
 var assert = require('assert');
 var utils = require('../lib/utils/utils.js');
 
-describe('lib/utils/utils', function () {
-    describe('fromWei', function () {
-        it('should return the correct value', function () {
+describe('lib/utils/utils', () => {
+    describe('fromWei', () => {
+        it('should return the correct value', () => {
             
             assert.equal(utils.fromWei(1000000000000000000, 'wei'),    '1000000000000000000');
             assert.equal(utils.fromWei(1000000000000000000, 'kwei'),   '1000000000000000');
