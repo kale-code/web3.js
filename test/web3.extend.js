@@ -35,20 +35,20 @@ var tests = [{
     })]
 }];
 
-describe('web3', function () {
-    describe('_extend', function () {
-        tests.forEach(function (test, index) {
-            it('test no: ' + index, function () {
+describe('web3', () => {
+    describe('_extend', () => {
+        tests.forEach((test, index) => {
+            it('test no: ' + index, () => {
                 web3._extend(test);
 
 
                 if(test.properties)
-                    test.properties.forEach(function(property){
+                    test.properties.forEach(property => {
 
                         var provider = new FakeHttpProvider();
                         web3.setProvider(provider);
                         provider.injectResult('');
-                        provider.injectValidation(function (payload) {
+                        provider.injectValidation(payload => {
                             assert.equal(payload.jsonrpc, '2.0');
                             assert.equal(payload.method, property.getter);
                         });
@@ -63,7 +63,7 @@ describe('web3', function () {
                     });
 
                 if(test.methods)
-                    test.methods.forEach(function(property){
+                    test.methods.forEach(property => {
                         if(test.property)
                             assert.isFunction(web3[test.property][property.name]);
                         else
