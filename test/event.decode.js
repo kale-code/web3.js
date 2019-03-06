@@ -167,10 +167,10 @@ var tests = [{
     }
 }];
 
-describe('lib/web3/event', function () {
-    describe('decode', function () {
-        tests.forEach(function (test, index) {
-            it('test no: ' + index, function () {
+describe('lib/web3/event', () => {
+    describe('decode', () => {
+        tests.forEach((test, index) => {
+            it('test no: ' + index, () => {
                 var web3 = new Web3();
                 var event = new SolidityEvent(web3, test.abi, address);
 
