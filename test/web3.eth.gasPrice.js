@@ -13,16 +13,16 @@ var tests = [{
     call: 'eth_'+ method
 }];
 
-describe('web3.eth', function () {
-    describe(method, function () {
-        tests.forEach(function (test, index) {
-            it('property test: ' + index, function () {
+describe('web3.eth', () => {
+    describe(method, () => {
+        tests.forEach((test, index) => {
+            it('property test: ' + index, () => {
                 
                 // given
                 var provider = new FakeHttpProvider();
                 web3.setProvider(provider);
                 provider.injectResult(test.result);
-                provider.injectValidation(function (payload) {
+                provider.injectValidation(payload => {
                     assert.equal(payload.jsonrpc, '2.0');
                     assert.equal(payload.method, test.call);
                     assert.deepEqual(payload.params, []);
