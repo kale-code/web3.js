@@ -3,9 +3,9 @@ var assert = chai.assert;
 var formatters = require('../lib/web3/formatters.js');
 var BigNumber = require('bignumber.js');
 
-describe('formatters', function () {
-    describe('outputBlockFormatter', function () {
-        it('should return the correct value', function () {
+describe('formatters', () => {
+    describe('outputBlockFormatter', () => {
+        it('should return the correct value', () => {
             
             assert.deepEqual(formatters.outputBlockFormatter({
                 hash: '0xd6960376d6c6dea93647383ffb245cfced97ccc5c7525397a543a72fdaea5265',
@@ -41,7 +41,7 @@ describe('formatters', function () {
                 size: 1000
             });
         });
-        it('should return the correct value, when null values are present', function () {
+        it('should return the correct value, when null values are present', () => {
             
             assert.deepEqual(formatters.outputBlockFormatter({
                 hash: null,
