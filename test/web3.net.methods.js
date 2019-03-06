@@ -5,8 +5,8 @@ var web3 = new Web3();
 var u = require('./helpers/test.utils.js');
 var FakeHttpProvider = require('./helpers/FakeHttpProvider');
 
-describe('web3.net', function() {
-    describe('methods', function() {
+describe('web3.net', () => {
+    describe('methods', () => {
         // set dummy providor, to prevent error
         web3.setProvider(new FakeHttpProvider());
 
